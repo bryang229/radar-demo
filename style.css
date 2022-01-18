@@ -1,0 +1,16 @@
+body{
+    text-align:center;
+}
+
+main{
+    margin-left:25%;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid black;
+}
+
+@media all and (max-width: 1000px) {
+    main{
+        margin-left:2.5%;
+    }
+}
