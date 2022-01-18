@@ -73,7 +73,6 @@ class Grid {
 
         if(userX > this.xValues[0] && userX < this.xValues[1]){
             location.x = 0;
-            rect(90,10,10,10,1);
         }
         else if(userX > this.xValues[1] && userX < this.xValues[2])
             location.x = 1;
@@ -91,7 +90,6 @@ class Grid {
             location.x = 7;
         else{ 
             location.x = -1;        
-            rect(10,10,20,20,10);
         }
             if(userY > this.yValues[0] && userY < this.yValues[1])
             location.y = 0;
@@ -113,7 +111,6 @@ class Grid {
             location.y = -1;        
         
         if(location.x >= 0 && location.y >= 0){
-            rect(40,40,40,40,20);
             if(location.x > 10 && location.y > 10){
                 return {result:[true,true],location:location};
             }
@@ -124,7 +121,6 @@ class Grid {
             }
         }
         else{
-            rect(10,300,20,20,2);
             location.x =  location.x > 10 ? location.x / 10 : location.x;
             location.y =  location.y > 10 ? location.y / 10 : location.y;
             return {result: [false,false],location};
@@ -280,16 +276,13 @@ class LedMatrix{
         
         if(check.result[0] && check.result[1]){
             this.setLEDS(uhOH,8,8);
-            rect(10,550,10,10,10)
         }
         else if(check.result[0] & !check.result[1]){
-            rect(550,550,20,20,10);
             this.setLEDS(normalMode,8,8);
             // let distance = sqrt((check.user.x-grid.xValues[check.location.x+1])**2+(check.user.y-grid.yValues[check.location.y+1])**2);
             this.setLED(check.location.x,check.location.y,Math.floor(mapNumber(this.getDistance(),0,50,0,255)));
         }
         else if(!check.result[0] && !check.result[1]){
-            rect(10,10,10,10)
             this.setLEDS(normalMode,8,8);
         }
         this.drawMatrix();
