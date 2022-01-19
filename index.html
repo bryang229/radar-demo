@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
-        <link rel="stylesheet" href="style.css"/>
-    </head>
-    <body>
-        <h1>Welcome!</h1>
-        <main>
-        </main>
-        <input type="range" id="sizeSlider" name="size" min= "25" max="250">
-        <label for="size">Size of LED Matrix</label>
-        <input type="button" onclick={handleGridClick()} id="gridBtn">Show Grid</input>
-        <script src="sketch.js" defer></script>
 
-        <DescriptionOfDemo>
-            <p>
-                Welcome to the Demo of my <a href = "https://github.com/bryang229/radar">Radar project</a>.<br>
-                My radar project orginally used 4 SD04 Ultrasonic sensors to appromiate distacnes of near
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
 
-            </p>
-        </DescriptionOfDemo>
+<body>
+    <h1>Welcome!</h1>
+    <main>
+    </main>
+    <input type="range" id="sizeSlider" name="size" min="25" max="250">
+    <label for="size">Size of LED Matrix</label>
+    <input type="button" onclick={handleGridClick()} id="gridBtn">Show Grid</input>
+    <script src="sketch.js" defer></script>
+
+    <div id="desc">
+        <p>
+            Welcome to the Demo of my <a href="https://github.com/bryang229/radar">Radar project</a>.<br>
+            My radar project originally used 4 SD04 Ultrasonic sensors to approximate distances of nearby objects. When
+            arranged properly it has a sudo radar effect. When the sensor detects something the arduino will draw the
+            object as a dot and the position on the LED matrix would depend on the distance of the object. </p>
+        <h3> <b>How to use demo:</b> </h3>
+        <p>
+            <b>Detection:</b>
+            The above LED Matrix can sense your mouse (when you tap if on a phone) within the grid around the
+            matrix. <br/>
+            <b>The Grid:</b>
+            The grid represents the field of range that the SD04 sensors had. You can change their sensitivity by changing the LED size (see <b>Change Size</b>)<br/>
+            <b>Showing/Hiding Grid:</b> 
+            You can hide/show the grid using
+            the Show Grid button below the demo.<br />
+            <b>Change Size:</b>
+            The Slider right next to the Show Grid button allows you to vary the size of the LED Matrix which also
+            increases the size of the grid. <br />
+            <b>Move:</b>
+            You can also move the LED Matrix using your keyboard <br />
 
 
-    </body>
+
+        </p>
+    </div>
+
+
+</body>
+
 </html>
